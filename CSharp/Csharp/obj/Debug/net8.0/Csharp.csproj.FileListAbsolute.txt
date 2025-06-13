@@ -1,0 +1,15 @@
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Csharp.exe
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Csharp.deps.json
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Csharp.runtimeconfig.json
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Csharp.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Csharp.pdb
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.AssemblyInfoInputs.cache
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.AssemblyInfo.cs
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.csproj.CoreCompileInputs.cache
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.sourcelink.json
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\refint\Csharp.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.pdb
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.genruntimeconfig.cache
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\ref\Csharp.dll
