@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+
 // i want to acess class at ./prozect/INsider.cs
 // To access the `Insider` class from another file, you need to ensure that both files are part of the same project and that the namespace is correctly referenced.
 using System.Collections.Generic;
@@ -71,6 +73,7 @@ interface IClass
     // }
 }
 
+    public delegate void delegateCaller();
 class Program
 {
     static void grandParent()
@@ -93,8 +96,30 @@ class Program
             throw new ArgumentException("An error occurred in parent.", e); // Wrapping the exception in a new one
         }
     }
+    static void delegateMethod()
+    {
+        Console.WriteLine("Delegate method called.");
+    }
+    delegate void Logger();
     static void Main(string[] args)
     {
+        // Example of using a delegate
+        delegateCaller caller = delegateMethod;
+        MyClass myClass = new MyClass();
+        caller += () => Console.WriteLine("Hello from lambda in Main!"); // Adding a lambda expression to the delegate  
+        myClass.delega(caller); // Invoking the delegate
+
+
+
+
+        void LogToFile() => Console.WriteLine("File");
+        void LogToConsole() => Console.WriteLine("Console");
+
+        Logger log = LogToFile;
+        log += LogToConsole;
+
+        log(); // Logs to both file and console
+
         // EmailNotifier emailNotifier = new EmailNotifier();
         // emailNotifier.Notify();
         // bc a = new bc();
@@ -102,9 +127,18 @@ class Program
         // oops.Age = 25; // Setting a valid age
         // Console.WriteLine($"Age is set to: {oops.Age}");
 
-
-        Console.WriteLine("Hello from Main!");
-    IClass.ok(); // Calling the static method from the interface
+        // ArrayList a = new ArrayList();
+        // a.Add(1);
+        // a.Add(null);
+        // a.Add(true);
+        // a.Add("me nigalo");
+        // foreach (var i in a)
+        // {
+        //     Console.WriteLine(i);
+        // }
+        // Console.WriteLine(a.Count);
+        // Console.WriteLine("Hello from Main!");
+        // IClass.ok(); // Calling the static method from the interface
 
         //         Console.WriteLine("Hello again from Main!");
         //         int a = Convert.ToInt32("123");
@@ -184,5 +218,81 @@ class Program
         // // }
 
         // }
+    }
+}
+
+class MyClass
+{
+    public void delega(delegateCaller caller)
+    {
+        caller();
+    }
+}
+
+namespace DelegateDemo
+{
+    class Program
+    {
+        // 🔷 1. Regular Delegate (custom)
+        public delegate int MathOperation(int x, int y);
+
+        // 🔷 2. Predicate Delegate (built-in)
+        static bool IsEven(int x) => x % 2 == 0;
+
+        // 🔷 3. Multicast Delegate Example
+        public delegate void Logger(string message);
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("🔹 REGULAR DELEGATE");
+            MathOperation add = (a, b) => a + b;
+            Console.WriteLine($"Add(3, 5) = {add(3, 5)}");
+
+            Console.WriteLine("\n🔹 FUNC DELEGATES");
+            Func<int, int, int> multiply = (a, b) => a * b;
+            Console.WriteLine($"Multiply(4, 6) = {multiply(4, 6)}");
+
+            Func<string, int> getLength = s => s.Length;
+            Console.WriteLine($"Length of 'hello' = {getLength("hello")}");
+
+            Console.WriteLine("\n🔹 ACTION DELEGATES");
+            Action<string> greet = name => Console.WriteLine($"Hello, {name}!");
+            greet("Nikhil");
+
+            Action<int, int> displaySum = (x, y) => Console.WriteLine($"Sum: {x + y}");
+            displaySum(10, 20);
+
+            Console.WriteLine("\n🔹 PREDICATE");
+            Predicate<int> isEven = IsEven;
+            Console.WriteLine($"Is 4 even? {isEven(4)}");
+
+            List<int> nums = new() { 1, 2, 3, 4, 5, 6 };
+            List<int> evens = nums.FindAll(isEven);
+            Console.WriteLine("Evens: " + string.Join(", ", evens));
+
+            Console.WriteLine("\n🔹 MULTICAST DELEGATE");
+            Logger logger = Console.WriteLine;
+            logger += msg => Console.WriteLine($"[LOGGED]: {msg}");
+            logger("This is a multicast delegate!");
+
+            Console.WriteLine("\n🔹 COMBINING FUNC AND ACTION IN PRACTICE");
+
+            List<string> names = new() { "Anna", "Bob", "Christopher", "Tom" };
+
+            Process(
+                names,
+                name => name.Length <= 4,               // Func<string, bool>
+                name => Console.WriteLine($"Short name: {name}") // Action<string>
+            );
+        }
+
+        static void Process<T>(List<T> items, Func<T, bool> filter, Action<T> processor)
+        {
+            foreach (var item in items)
+            {
+                if (filter(item))
+                    processor(item);
+            }
+        }
     }
 }
