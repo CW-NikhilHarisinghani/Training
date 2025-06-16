@@ -37,6 +37,39 @@ namespace HelloWorld
     }
 }
 
+sealed class ab
+{
+    public ab()
+    {
+        Console.WriteLine("Constructor called");
+    }
+}
+
+// class bc : ab
+// {
+//     int k = 2;
+//     public bc()
+//     {
+//         // ab(1);
+//         Console.WriteLine("Derived constructor called");
+//     }
+// }
+
+interface IClass
+{
+    static int x=0;
+    static IClass()
+    {
+        Console.WriteLine("Static constructor in interface called.");
+    }
+    static void ok()
+    {
+        Console.WriteLine("Static method in interface called.");
+    }
+    // {
+    //     Console.WriteLine("Hello");
+    // }
+}
 
 class Program
 {
@@ -62,83 +95,94 @@ class Program
     }
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello again from Main!");
-        int a = Convert.ToInt32("123");
-        Console.WriteLine($"Converted value: {a}");
-        if (a.GetType() == typeof(int))
-        {
-            Console.WriteLine("Variable 'a' is of type int.");
-        }
-        else
-        {
-            Console.WriteLine("Variable 'a' is not of type int.");
-        }
-        Console.WriteLine("Conversion successful!");
-        MyInt myInt = 456;
-        int b = myInt;
-
-        const string m = "abc";
-        const string n = "abc";
-        // n[0] = 'd';
-        // how to achieve .intern() like java here
-        // In C#, string interning is handled automatically by the runtime.
-        // When you create a string literal, the runtime checks if an identical string already exists in memory.
-        // give a code that achieves it
-        string internedM = string.Intern(m);
-        Console.WriteLine(object.ReferenceEquals(m, n));
+        // EmailNotifier emailNotifier = new EmailNotifier();
+        // emailNotifier.Notify();
+        // bc a = new bc();
+        // Oops oops = new Oops();
+        // oops.Age = 25; // Setting a valid age
+        // Console.WriteLine($"Age is set to: {oops.Age}");
 
 
-        foreach (char c in m)
-        {
-            Console.WriteLine(c);
-        }
-        for (int i = 0; i < m.Length; i++)
-        {
-            Console.WriteLine(m[i]);
-        }
-        Console.WriteLine($"MyInt value: {myInt.Value}");
-        Console.WriteLine($"Converted MyInt to int: {b}");
-        // 6. Boxing with object[]
+        Console.WriteLine("Hello from Main!");
+    IClass.ok(); // Calling the static method from the interface
 
-        object[] mixed = new object[] { 1, "hello", true };
-        List<object> list = new List<object>();
-        list.Add(5);
+        //         Console.WriteLine("Hello again from Main!");
+        //         int a = Convert.ToInt32("123");
+        //         Console.WriteLine($"Converted value: {a}");
+        //         if (a.GetType() == typeof(int))
+        //         {
+        //             Console.WriteLine("Variable 'a' is of type int.");
+        //         }
+        //         else
+        //         {
+        //             Console.WriteLine("Variable 'a' is not of type int.");
+        //         }
+        //         Console.WriteLine("Conversion successful!");
+        //         MyInt myInt = 456;
+        //         int b = myInt;
 
-        List<int> nums = new List<int>();
-        nums.Add(5);
-        Testinig.Insider.Maid(); // Accessing the Maid method from the Insider class
-
-        Testinig.Insider l = new Testinig.Insider();
-        l.ratata(); // Accessing the Maid method from the Insider class
-        try
-        {
-            throw new Exception("specific condition");
-        }
-        catch (Exception e) when (e.Message.Contains("specific condition"))
-        {
-            Console.WriteLine("Caught an exception with a specific condition.");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Caught an exception: {e.Message}");
-        }
+        //         const string m = "abc";
+        //         const string n = "abc";
+        //         // n[0] = 'd';
+        //         // how to achieve .intern() like java here
+        //         // In C#, string interning is handled automatically by the runtime.
+        //         // When you create a string literal, the runtime checks if an identical string already exists in memory.
+        //         // give a code that achieves it
+        //         string internedM = string.Intern(m);
+        //         Console.WriteLine(object.ReferenceEquals(m, n));
 
 
-        throw new exception('message', );
-        try
-        {
-            parent();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Caught an exception in Main: {e.Message}");
-            Console.WriteLine(e.StackTrace);
-//             while (inner != null)
-//             {
-//              Console.WriteLine(inner.StackTrace);
-//                 inner = inner.InnerException;
-// }
+        //         foreach (char c in m)
+        //         {
+        //             Console.WriteLine(c);
+        //         }
+        //         for (int i = 0; i < m.Length; i++)
+        //         {
+        //             Console.WriteLine(m[i]);
+        //         }
+        //         Console.WriteLine($"MyInt value: {myInt.Value}");
+        //         Console.WriteLine($"Converted MyInt to int: {b}");
+        //         // 6. Boxing with object[]
 
-        }
+        //         object[] mixed = new object[] { 1, "hello", true };
+        //         List<object> list = new List<object>();
+        //         list.Add(5);
+
+        //         List<int> nums = new List<int>();
+        //         nums.Add(5);
+        //         Testinig.Insider.Maid(); // Accessing the Maid method from the Insider class
+
+        //         Testinig.Insider l = new Testinig.Insider();
+        //         l.ratata(); // Accessing the Maid method from the Insider class
+        //         try
+        //         {
+        //             throw new Exception("specific condition");
+        //         }
+        //         catch (Exception e) when (e.Message.Contains("specific condition"))
+        //         {
+        //             Console.WriteLine("Caught an exception with a specific condition.");
+        //         }
+        //         catch (Exception e)
+        //         {
+        //             Console.WriteLine($"Caught an exception: {e.Message}");
+        //         }
+
+
+        //         // throw new exception('message', );
+        //         try
+        //         {
+        //             parent();
+        //         }
+        //         catch (Exception e)
+        //         {
+        //             Console.WriteLine($"Caught an exception in Main: {e.Message}");
+        //             Console.WriteLine(e.StackTrace);
+        // //             while (inner != null)
+        // //             {
+        // //              Console.WriteLine(inner.StackTrace);
+        // //                 inner = inner.InnerException;
+        // // }
+
+        // }
     }
 }

@@ -15,6 +15,10 @@ namespace Testinig
             MyInt myInt = 123;
             int convertedValue = myInt; // Implicit conversion
             Console.WriteLine($"MyInt value: {myInt.Value}, Converted value: {convertedValue}");
+
+            Oops oops = new Oops();
+            oops.Age = 30; // Setting a valid age
+
         }
 
 
