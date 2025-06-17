@@ -13,3 +13,7 @@ C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\refint
 C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.pdb
 C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.genruntimeconfig.cache
 C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\ref\Csharp.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.csproj.AssemblyReference.cache
+C:\Users\nikhil.harisinghani\Desktop\Space\CSharp\Csharp\obj\Debug\net8.0\Csharp.csproj.Up2Date

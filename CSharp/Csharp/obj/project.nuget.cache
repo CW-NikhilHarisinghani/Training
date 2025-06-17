@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lzVaZzvWF+c=",
+  "dgSpecHash": "Mk6lswudYdM=",
   "success": true,
   "projectFilePath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\CSharp\\Csharp\\Csharp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.6\\microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512",
+    "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.6\\microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

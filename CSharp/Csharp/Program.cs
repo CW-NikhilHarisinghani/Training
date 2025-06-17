@@ -8,6 +8,7 @@ using System.Linq;
 using Testinig; // Ensure this namespace matches the one in Insider.cs
 using Csharp.linQ.Employee; // Ensure this namespace matches the one in Employee.cs
 using CSharp.limQ.Department; // Ensure this namespace matches the one in Department.cs
+using Charp.DependencyInjection;
 namespace HelloWorld
 {
     public class StringOps
@@ -122,6 +123,8 @@ class Program
     delegate void Logger();
     static void Main(string[] args)
     {
+        Grah g = new Grah();
+        Grah.Mmm();
         // Console.WriteLine("Hello from Main!");
 
         // List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
@@ -154,16 +157,16 @@ class Program
         //     if (cnt > 0) break;
         // }
 
-        List<Func<int>> funcs = new List<Func<int>>();
+        // List<Func<int>> funcs = new List<Func<int>>();
 
-        for (int i = 0; i < 3; i++)
-        {
-            int k = i;
-            funcs.Add(() => k);
-        }
+        // for (int i = 0; i < 3; i++)
+        // {
+        //     int k = i;
+        //     funcs.Add(() => k);
+        // }
 
-        foreach (var f in funcs)
-            Console.WriteLine(f());
+        // foreach (var f in funcs)
+        //     Console.WriteLine(f());
 
 
 
