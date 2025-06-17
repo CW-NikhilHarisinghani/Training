@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Testinig; // Ensure this namespace matches the one in Insider.cs
+using Csharp.linQ.Employee; // Ensure this namespace matches the one in Employee.cs
+using CSharp.limQ.Department; // Ensure this namespace matches the one in Department.cs
 namespace HelloWorld
 {
     public class StringOps
@@ -74,6 +76,23 @@ interface IClass
 }
 
     public delegate void delegateCaller();
+
+class TCPData
+{
+    public int Id { get; set; }
+    public String Name { get; set; }
+}
+// This is called an Extension Method.
+// satcic methods in a static class can be used to extend the functionality of existing types without modifying them.
+// Extension methods are a way to add new methods to existing types without creating a new derived type
+public static class MyExtensions
+{
+    public static void Print<T>(this List<T> list)
+    {
+        foreach (var item in list)
+            Console.WriteLine(item);
+    }
+}
 class Program
 {
     static void grandParent()
@@ -103,22 +122,155 @@ class Program
     delegate void Logger();
     static void Main(string[] args)
     {
-        // Example of using a delegate
-        delegateCaller caller = delegateMethod;
-        MyClass myClass = new MyClass();
-        caller += () => Console.WriteLine("Hello from lambda in Main!"); // Adding a lambda expression to the delegate  
-        myClass.delega(caller); // Invoking the delegate
+        // Console.WriteLine("Hello from Main!");
+
+        // List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+        // var query = numbers.Where(x => x > 2);  // ⚠️ Nothing executed here
+
+        // numbers.Add(6); // 😯 Modifies the original list
+
+        // foreach (var item in query) // ✅ Execution happens NOW
+        // {
+        //     Console.WriteLine(item);
+        // }
+
+        // List<int> n = new List<int> { 1, 2, 3 };
+
+        // var q = numbers.Where(x =>
+        // {
+        //     Console.WriteLine($"Checking {x}");
+        //     return x > 1;
+        // });
+
+        // // Deferred: No output yet!
+
+        // Console.WriteLine("Iterating now:");
+        // int cnt = 0;
+        // foreach (var x in q)
+        // {
+        //     cnt++;
+        //     Console.WriteLine($"Got: {x}");
+        //     if (cnt > 0) break;
+        // }
+
+        List<Func<int>> funcs = new List<Func<int>>();
+
+        for (int i = 0; i < 3; i++)
+        {
+            int k = i;
+            funcs.Add(() => k);
+        }
+
+        foreach (var f in funcs)
+            Console.WriteLine(f());
 
 
 
 
-        void LogToFile() => Console.WriteLine("File");
-        void LogToConsole() => Console.WriteLine("Console");
 
-        Logger log = LogToFile;
-        log += LogToConsole;
 
-        log(); // Logs to both file and console
+
+
+
+
+
+        // List<Employee> employees = new List<Employee>
+        // {
+        //     new Employee(1, "Alice", "HR", 50000),
+        //     new Employee(2, "Bob", "IT", 60000),
+        //     new Employee(3, "Charlie", "Finance", 70000)
+        // };
+
+        // List<Department> departments = new List<Department>
+        // {
+        //     new Department(1, "HR"),
+        //     new Department(2, "IT"),
+        //     new Department(3, "Finance")
+        // };
+
+        // var highEarners = employees
+        //     .Where(e => e.Salary > 55000)
+        //     .Select(e => new { e.Name, e.Salary });
+
+        // Console.WriteLine("High Earners:");
+        // foreach (var employee in highEarners)
+        // {
+        //     Console.WriteLine($"Name: {employee.Name}, Salary: {employee.Salary}");
+        // }
+
+        // var departmentNames = departments
+        //     .Join(
+        //         employees,
+        //         d => d.Name,
+        //         e => e.Department,
+        //         (d, e) => new { d.Id, d.Name, e.Salary }
+        //     );
+
+        // foreach (var grah in departmentNames) {
+        //     Console.WriteLine($"Department ID: {grah.Id}, Name: {grah.Name}, Salary: {grah.Salary}");
+        // }
+
+        // var adj = from e in employees
+        //           where e.Salary > 55000
+        //           select new { e.Name, e.Salary };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // List<int> hehe = new List<int> { 1, 2, 3, 4, 5 };
+        // hehe.Print();
+
+        // // anony mous class
+        // var navra = new
+        // {
+        //     Name = "Nikhil",
+        //     Age = 25,
+        //     IsStudent = true
+        // };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // Example of using a delegate
+        // delegateCaller caller = delegateMethod;
+        // MyClass myClass = new MyClass();
+        // caller += () => Console.WriteLine("Hello from lambda in Main!"); // Adding a lambda expression to the delegate  
+        // myClass.delega(caller); // Invoking the delegate
+
+
+
+
+        // void LogToFile() => Console.WriteLine("File");
+        // void LogToConsole() => Console.WriteLine("Console");
+
+        // Logger log = LogToFile;
+        // log += LogToConsole;
+
+        // log(); // Logs to both file and console
 
         // EmailNotifier emailNotifier = new EmailNotifier();
         // emailNotifier.Notify();
@@ -221,78 +373,80 @@ class Program
     }
 }
 
-class MyClass
-{
-    public void delega(delegateCaller caller)
-    {
-        caller();
-    }
-}
+// class MyClass
+// {
+//     public void delega(delegateCaller caller)
+//     {
+//         caller();
+//     }
+// }
 
-namespace DelegateDemo
-{
-    class Program
-    {
-        // 🔷 1. Regular Delegate (custom)
-        public delegate int MathOperation(int x, int y);
+// namespace DelegateDemo
+// {
+//     class Program
+//     {
+//         // // 🔷 1. Regular Delegate (custom)
+//         // public delegate int MathOperation(int x, int y);
 
-        // 🔷 2. Predicate Delegate (built-in)
-        static bool IsEven(int x) => x % 2 == 0;
+//         // // 🔷 2. Predicate Delegate (built-in)
+//         // static bool IsEven(int x) => x % 2 == 0;
 
-        // 🔷 3. Multicast Delegate Example
-        public delegate void Logger(string message);
+//         // // 🔷 3. Multicast Delegate Example
+//         // public delegate void Logger(string message);
 
-        static void Main(string[] args)
-        {
-            Console.WriteLine("🔹 REGULAR DELEGATE");
-            MathOperation add = (a, b) => a + b;
-            Console.WriteLine($"Add(3, 5) = {add(3, 5)}");
+//         // static void Main(string[] args)
+//         // {
+//         //     Console.WriteLine("🔹 REGULAR DELEGATE");
+//         //     MathOperation add = (a, b) => a + b;
+//         //     Console.WriteLine($"Add(3, 5) = {add(3, 5)}");
 
-            Console.WriteLine("\n🔹 FUNC DELEGATES");
-            Func<int, int, int> multiply = (a, b) => a * b;
-            Console.WriteLine($"Multiply(4, 6) = {multiply(4, 6)}");
+//         //     Console.WriteLine("\n🔹 FUNC DELEGATES");
+//         //     Func<int, int, int> multiply = (a, b) => a * b;
+//         //     Console.WriteLine($"Multiply(4, 6) = {multiply(4, 6)}");
 
-            Func<string, int> getLength = s => s.Length;
-            Console.WriteLine($"Length of 'hello' = {getLength("hello")}");
+//         //     Func<string, int> getLength = s => s.Length;
+//         //     Console.WriteLine($"Length of 'hello' = {getLength("hello")}");
 
-            Console.WriteLine("\n🔹 ACTION DELEGATES");
-            Action<string> greet = name => Console.WriteLine($"Hello, {name}!");
-            greet("Nikhil");
+//         //     Console.WriteLine("\n🔹 ACTION DELEGATES");
+//         //     Action<string> greet = name => Console.WriteLine($"Hello, {name}!");
+//         //     greet("Nikhil");
 
-            Action<int, int> displaySum = (x, y) => Console.WriteLine($"Sum: {x + y}");
-            displaySum(10, 20);
+//         //     Action<int, int> displaySum = (x, y) => Console.WriteLine($"Sum: {x + y}");
+//         //     displaySum(10, 20);
 
-            Console.WriteLine("\n🔹 PREDICATE");
-            Predicate<int> isEven = IsEven;
-            Console.WriteLine($"Is 4 even? {isEven(4)}");
+//         //     Console.WriteLine("\n🔹 PREDICATE");
+//         //     Predicate<int> isEven = IsEven;
+//         //     Console.WriteLine($"Is 4 even? {isEven(4)}");
 
-            List<int> nums = new() { 1, 2, 3, 4, 5, 6 };
-            List<int> evens = nums.FindAll(isEven);
-            Console.WriteLine("Evens: " + string.Join(", ", evens));
+//         //     List<int> nums = new() { 1, 2, 3, 4, 5, 6 };
+//         //     List<int> evens = nums.FindAll(isEven);
+//         //     Console.WriteLine("Evens: " + string.Join(", ", evens));
 
-            Console.WriteLine("\n🔹 MULTICAST DELEGATE");
-            Logger logger = Console.WriteLine;
-            logger += msg => Console.WriteLine($"[LOGGED]: {msg}");
-            logger("This is a multicast delegate!");
+//         //     Console.WriteLine("\n🔹 MULTICAST DELEGATE");
+//         //     Logger logger = Console.WriteLine;
+//         //     logger += msg => Console.WriteLine($"[LOGGED]: {msg}");
+//         //     logger("This is a multicast delegate!");
 
-            Console.WriteLine("\n🔹 COMBINING FUNC AND ACTION IN PRACTICE");
+//         //     Console.WriteLine("\n🔹 COMBINING FUNC AND ACTION IN PRACTICE");
 
-            List<string> names = new() { "Anna", "Bob", "Christopher", "Tom" };
+//         //     List<string> names = new() { "Anna", "Bob", "Christopher", "Tom" };
 
-            Process(
-                names,
-                name => name.Length <= 4,               // Func<string, bool>
-                name => Console.WriteLine($"Short name: {name}") // Action<string>
-            );
-        }
+//         //     Process(
+//         //         names,
+//         //         name => name.Length <= 4,               // Func<string, bool>
+//         //         name => Console.WriteLine($"Short name: {name}") // Action<string>
+//         //     );
+//         // }
 
-        static void Process<T>(List<T> items, Func<T, bool> filter, Action<T> processor)
-        {
-            foreach (var item in items)
-            {
-                if (filter(item))
-                    processor(item);
-            }
-        }
-    }
-}
+//         // static void Process<T>(List<T> items, Func<T, bool> filter, Action<T> processor)
+//         // {
+//         //     foreach (var item in items)
+//         //     {
+//         //         if (filter(item))
+//         //             processor(item);
+//         //     }
+//         // }
+
+        
+//     }
+// }
