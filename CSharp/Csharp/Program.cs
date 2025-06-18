@@ -9,6 +9,8 @@ using Testinig; // Ensure this namespace matches the one in Insider.cs
 using Csharp.linQ.Employee; // Ensure this namespace matches the one in Employee.cs
 using CSharp.limQ.Department; // Ensure this namespace matches the one in Department.cs
 using Charp.DependencyInjection;
+using CSharp.Async;
+using System.Threading.Tasks;
 namespace HelloWorld
 {
     public class StringOps
@@ -121,10 +123,14 @@ class Program
         Console.WriteLine("Delegate method called.");
     }
     delegate void Logger();
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-        Grah g = new Grah();
-        Grah.Mmm();
+
+        // await AsyncProgramming.SimulateCpuWork(); // Call the async method runner
+        //  await AsyncProgramming.Runner(); // Call the async method runner
+        await AsyncProgramming.Runne();
+        // Grah g = new Grah();
+        // Grah.Mmm();
         // Console.WriteLine("Hello from Main!");
 
         // List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
