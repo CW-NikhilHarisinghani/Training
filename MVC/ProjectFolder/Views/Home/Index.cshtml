@@ -1,8 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var message = TempData["Message"] as string;
+    TempData.Keep("Message");
+    // This line is optional, it ensures that the TempData is kept for the next request
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<script>
+    console.log("This is a console log message from the Index view.");
+    @if (message != null)
+    {
+        <text>console.log(@Html.Raw(Json.Serialize(message)));\n</text>
+    }
+</script>
+
+@if(message != null)
+{
+    <div class="alert alert-info">@message</div>
+}
+else
+{
+    <div class="alert alert-warning">No message available.</div>
+}

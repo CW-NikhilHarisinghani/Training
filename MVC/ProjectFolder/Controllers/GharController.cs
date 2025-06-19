@@ -4,18 +4,18 @@ using ProjectFolder.Models;
 
 namespace ProjectFolder.Controllers;
 
-public class HomeController : Controller
+public class GharController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public GharController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public ViewResult Index()
     {
-        TempData["Message"] = "Welcome to the Home Page!!!!!!!!!!!!!!!!!!!!!!!!";
+        _logger.LogInformation("Index action called");
         return View();
     }
 
