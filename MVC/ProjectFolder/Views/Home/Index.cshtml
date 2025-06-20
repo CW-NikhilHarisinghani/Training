@@ -1,7 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-    var message = TempData["Message"] as string;
-    TempData.Keep("Message");
+﻿@model DataSharing
+@* @model ErrorViewModel  only one model directive is allowed
+to Enable multiple models using strong typing we need to create one combined model class
+*@
+@{
+    @* ViewData["Title"] = "Home Page";
+    var message = ViewBag["data"] as DataSharing;
+    TempData.Keep("Message"); *@
     // This line is optional, it ensures that the TempData is kept for the next request
 }
 
@@ -9,18 +13,17 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-
 <script>
-    console.log("This is a console log message from the Index view.");
-    @if (message != null)
-    {
-        <text>console.log(@Html.Raw(Json.Serialize(message)));\n</text>
-    }
+    // Safely log the message object to the console
+    @* var message = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(message)); *@
+    console.log(message);
 </script>
-
-@if(message != null)
+@if(Model != null)
 {
-    <div class="alert alert-info">@message</div>
+    <div class="alert alert-info">@Model.Email</div>
+    <div class="alert alert-info">@Model.IsChecked</div>
+    <div class="alert alert-info">@Model.Message</div>
+    <div class="alert alert-info">@Model.Name</div>
 }
 else
 {

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>
+      Contact Us
+    </h1>
+
+    <div class="form">
+      <form action="#" method="post">
+        <div class="name">
+
+          <div class="first-name">
+            <label for="first-name">
+              First Name
+              <span class="required">*</span>
+            </label>
+            <br>
+            <input type="text" id="first-name" name="first-name" required>
+            <span class="error-message" id="first-name-error"></span>
+          </div>
+
+          <div class="last-name">
+            <label for="last-name">
+              Last Name
+              <span class="required">*</span>
+            </label>
+            <br>
+            <input type="text" id="last-name" name="last-name" required>
+            <span class="error-message" id="last-name-error"></span>
+          </div>
+
+        </div>
+
+        <div class="email">
+          <label for="email">
+            Email Address
+            <span class="required">*</span>
+          </label>
+          <br>
+          <div class="email-input-container">
+            <input type="email" id="email" name="email" required>
+          </div>
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+        <div class="query-type">
+          <label for="query-type">
+            Query Type
+            <span class="required">*</span>
+          </label>
+          <br>
+
+          <div class="query-options">
+
+            <div class="general-enquiry">
+              <input type="radio" id="general-enquiry" name="query-type" value="general-enquiry">
+              <label for="general-enquiry">
+                General Enquiry
+              </label>
+            </div>
+
+            <div class="support-request">
+              <input type="radio" id="support-request" name="query-type" value="support-request">
+              <label for="support-request">Support Request</label>
+            </div>
+          </div>
+          <span class="error-message" id="query-type-error"></span>
+        </div>
+
+        <div class="message">
+          <label for="message">
+            Message
+            <span class="required">*</span>
+          </label>
+          <br>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <span class="error-message" id="message-error"></span>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">I consent to being contacted by the team
+            <span class="required">*</span>
+          </label>
+          <span class="error-message" id="consent-error"></span>
+        </div>
+
+        <div class="submit">
+          <button type="submit">Submit</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+  <div class="toast">
+    Message sent!
+    <br>
+    Thanks for completing the form. We will be in touch soon.
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

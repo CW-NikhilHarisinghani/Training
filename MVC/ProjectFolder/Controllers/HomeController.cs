@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ProjectFolder.Models;
+using ProjectFolder.Models;
 
 namespace ProjectFolder.Controllers;
 
@@ -15,8 +16,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        TempData["Message"] = "Welcome to the Home Page!!!!!!!!!!!!!!!!!!!!!!!!";
-        return View();
+        var grah = new DataSharing
+        {
+            Name = "John Doe",
+            Email = "@gamil.com",
+            Message = "Hello, this is a test message.",
+            IsChecked = true
+        };
+        // pass a paramter to the view
+        
+        return View(grah);
     }
 
     public IActionResult Privacy()
