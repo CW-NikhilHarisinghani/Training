@@ -11,6 +11,7 @@ using CSharp.limQ.Department; // Ensure this namespace matches the one in Depart
 using Charp.DependencyInjection;
 using CSharp.Async;
 using System.Threading.Tasks;
+using CSharp.Dapper;
 namespace HelloWorld
 {
     public class StringOps
@@ -125,10 +126,10 @@ class Program
     delegate void Logger();
     static async Task Main(string[] args)
     {
-
+        DapperExample.Run().Wait(); // Call the Dapper example method
         // await AsyncProgramming.SimulateCpuWork(); // Call the async method runner
         //  await AsyncProgramming.Runner(); // Call the async method runner
-        await AsyncProgramming.Runne();
+        // await AsyncProgramming.Runne();
         // Grah g = new Grah();
         // Grah.Mmm();
         // Console.WriteLine("Hello from Main!");

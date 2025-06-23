@@ -57,8 +57,8 @@ namespace Charp.DependencyInjection
             var services = new ServiceCollection();
             // services.
             services.AddTransient<ILogger, ConsoleLogger>();
-            // services.AddSingleton<ILogger, FancyLogger>(); // ⛔️ This replaces the transient
-
+            // services.AddSingleton<ILogger, FancyLogger>(); // This replaces the transient
+        
             services.AddSingleton<UserService>();
             var provider = services.BuildServiceProvider();
 
