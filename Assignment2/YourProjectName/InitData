@@ -1,0 +1,86 @@
+show databases;
+
+create database Local;
+
+use local;
+
+show tables;
+
+CREATE TABLE IF NOT EXISTS Stocks (
+    stock_id INT AUTO_INCREMENT PRIMARY KEY,
+    make_name VARCHAR(100),
+    model_name VARCHAR(100),
+    make_year INT,
+    price DECIMAL(10, 2),
+    driven_kms INT,
+    fuel_type VARCHAR(50),
+    city_name VARCHAR(100)
+);
+
+
+INSERT INTO Stocks (make_name, model_name, make_year, price, driven_kms, fuel_type, city_name)
+VALUES
+('Honda', 'Civic', 2018, 850000, 45000, 'Petrol', 'Mumbai'),
+('Maruti', 'Swift', 2020, 550000, 30000, 'Petrol', 'Delhi'),
+('Hyundai', 'i20', 2019, 600000, 25000, 'Diesel', 'Bangalore'),
+('Tata', 'Nexon', 2021, 950000, 15000, 'Petrol', 'Pune'),
+('Kia', 'Seltos', 2022, 1250000, 8000, 'Diesel', 'Hyderabad'),
+('Ford', 'EcoSport', 2017, 750000, 60000, 'Diesel', 'Ahmedabad'),
+('Mahindra', 'Thar', 2023, 1700000, 2000, 'Petrol', 'Chennai'),
+('Toyota', 'Fortuner', 2020, 3200000, 40000, 'Diesel', 'Kolkata'),
+('Nissan', 'Magnite', 2021, 700000, 10000, 'Petrol', 'Lucknow'),
+('Renault', 'Kwid', 2019, 380000, 35000, 'Petrol', 'Indore'),
+('Skoda', 'Rapid', 2018, 720000, 50000, 'Diesel', 'Nagpur'),
+('Volkswagen', 'Polo', 2021, 800000, 20000, 'Petrol', 'Jaipur'),
+('MG', 'Hector', 2022, 1500000, 10000, 'Diesel', 'Bhopal'),
+('Hyundai', 'Creta', 2020, 1100000, 30000, 'Petrol', 'Surat'),
+('Tata', 'Altroz', 2021, 650000, 18000, 'Diesel', 'Patna'),
+('Mahindra', 'XUV300', 2022, 1150000, 12000, 'Petrol', 'Ludhiana'),
+('Toyota', 'Glanza', 2019, 700000, 40000, 'Petrol', 'Agra'),
+('Maruti', 'Baleno', 2021, 780000, 22000, 'Petrol', 'Ranchi'),
+('Kia', 'Sonet', 2022, 1050000, 8000, 'Diesel', 'Kanpur'),
+('Renault', 'Triber', 2020, 600000, 30000, 'Petrol', 'Amritsar');
+
+
+ALTER TABLE Stocks
+MODIFY fuel_type INT;
+
+DROP TABLE IF EXISTS Stocks;
+
+
+CREATE TABLE Stocks (
+    stock_id INT AUTO_INCREMENT PRIMARY KEY,
+    make_name VARCHAR(100),
+    model_name VARCHAR(100),
+    make_year INT,
+    price DECIMAL(10, 2),
+    driven_kms INT,
+    fuel_type INT, -- mapped from C# enum
+    city_name VARCHAR(100)
+);
+
+
+
+INSERT INTO Stocks (make_name, model_name, make_year, price, driven_kms, fuel_type, city_name)
+VALUES
+('Honda', 'Civic', 2018, 850000, 45000, 0, 'Mumbai'),
+('Maruti', 'Swift', 2020, 550000, 30000, 0, 'Delhi'),
+('Hyundai', 'i20', 2019, 600000, 25000, 1, 'Bangalore'),
+('Tata', 'Nexon', 2021, 950000, 15000, 0, 'Pune'),
+('Kia', 'Seltos', 2022, 1250000, 8000, 1, 'Hyderabad'),
+('Ford', 'EcoSport', 2017, 750000, 60000, 1, 'Ahmedabad'),
+('Mahindra', 'Thar', 2023, 1700000, 2000, 0, 'Chennai'),
+('Toyota', 'Fortuner', 2020, 3200000, 40000, 1, 'Kolkata'),
+('Nissan', 'Magnite', 2021, 700000, 10000, 0, 'Lucknow'),
+('Renault', 'Kwid', 2019, 380000, 35000, 0, 'Indore'),
+('Skoda', 'Rapid', 2018, 720000, 50000, 1, 'Nagpur'),
+('Volkswagen', 'Polo', 2021, 800000, 20000, 0, 'Jaipur'),
+('MG', 'Hector', 2022, 1500000, 10000, 1, 'Bhopal'),
+('Hyundai', 'Creta', 2020, 1100000, 30000, 0, 'Surat'),
+('Tata', 'Altroz', 2021, 650000, 18000, 1, 'Patna'),
+('Mahindra', 'XUV300', 2022, 1150000, 12000, 0, 'Ludhiana'),
+('Toyota', 'Glanza', 2019, 700000, 40000, 0, 'Agra'),
+('Maruti', 'Baleno', 2021, 780000, 22000, 0, 'Ranchi'),
+('Kia', 'Sonet', 2022, 1050000, 8000, 1, 'Kanpur'),
+('Renault', 'Triber', 2020, 600000, 30000, 0, 'Amritsar');
+
