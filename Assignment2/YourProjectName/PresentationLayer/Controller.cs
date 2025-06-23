@@ -1,29 +1,34 @@
 using Microsoft.AspNetCore.Mvc;
 using DTO.StockRequestDTO;
 using Helper.StockHelper;
-using BuisnessAccessLayer.StockBAL;
+using BuisnessAccessLayer.IStockBAL;
 [Route("api/[controller]")]
 public class StockController : ControllerBase
 {
-    StockBAL stockBal;
-    public StockController(StockBAL _stockBal)
+    private readonly IStockBAL stockBal;
+    public StockController(IStockBAL _stockBal)
     {
         stockBal = _stockBal;
     }
     [HttpGet]
-    public IActionResult GetStocks([FromQuery] StockRequestDTO stockRequest)
+    public async Task<IActionResult> GetStocks([FromQuery] StockRequestDTO stockRequest)
     {
-        Console.WriteLine(stockRequest.FuelType, " ", stockRequest.Budget);
-        if (StockHelper.IsRequestValid(stockRequest) == false)
+        try
         {
-            return BadRequest(new
+            if (StockHelper.IsRequestValid(stockRequest) == false)
             {
-                message = "Invalid request format. Expected format: digits-digits.",
-                example = "123-456"
-            });
+                return BadRequest(new
+                {
+                    message = "Invalid request format."
+                });
+            }
+            var res = await stockBal.FindStock(stockRequest);
+            return Ok(res);
         }
-        stockBal.FindStock(stockRequest);
-        return Ok(new List<object>());
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return StatusCode(500, "An unexpected error occurred.");
+        }
     }
-
 }

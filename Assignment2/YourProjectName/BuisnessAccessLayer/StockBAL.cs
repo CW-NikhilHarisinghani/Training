@@ -1,15 +1,20 @@
+namespace BuisnessAccessLayer.StockBAL;
 using AutoMapper;
 using DTO.StockRequestDTO;
 using Entities.StockRequest;
+using DataAccessLayer.IStockRepository;
+using System.Threading.Tasks;
+using BuisnessAccessLayer.IStockBAL;
+using DTO.StockResponseDTO;
 
-namespace BuisnessAccessLayer.StockBAL;
-
-public class StockBAL
+public class StockBAL:IStockBAL
 {
     private readonly IMapper mapper;
-    public StockBAL(IMapper _mapper)
+    private readonly IStockRepository repository;
+    public StockBAL(IMapper _mapper, IStockRepository _repository)
     {
         mapper = _mapper;
+        repository = _repository;
     }
 
     StockRequest MapDtoToEntity(StockRequestDTO dto)
@@ -17,8 +22,18 @@ public class StockBAL
         return mapper.Map<StockRequest>(dto);
     }
 
-    public void FindStock(StockRequestDTO stockRequestDTO)
+    public async Task<IEnumerable<StockResponseDTO>> FindStock(StockRequestDTO stockRequestDTO)
     {
-        StockRequest stockParams = MapDtoToEntity(stockRequestDTO);
+        try
+        {
+            StockRequest stockParams = MapDtoToEntity(stockRequestDTO);
+            var response = await repository.FetchStocks(stockParams); ;
+            return mapper.Map<IEnumerable<StockResponseDTO>>(response);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            throw;
+        }
     }
 }

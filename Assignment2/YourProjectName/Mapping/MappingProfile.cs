@@ -37,7 +37,7 @@ public class MappingProfile : Profile
     {
         if (string.IsNullOrEmpty(budget))
         { return null; }
-        var budgetParts = budget.Split('+');
+        var budgetParts = budget.Split('-');
         return Convert.ToInt32(budgetParts[0]);
     }
 
@@ -45,7 +45,7 @@ public class MappingProfile : Profile
     {
         if (string.IsNullOrEmpty(budget))
         { return null; }
-        var budgetParts = budget.Split('+');
+        var budgetParts = budget.Split('-');
         return Convert.ToInt32(budgetParts[1]);
     }
 

@@ -44,6 +44,19 @@
           }
         }
       },
+      "Dapper/2.1.66": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Google.Protobuf/3.30.0": {
         "type": "package",
         "compile": {
@@ -722,6 +735,25 @@
         "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
         "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
         "packageIcon.png"
+      ]
+    },
+    "Dapper/2.1.66": {
+      "sha512": "/q77jUgDOS+bzkmk3Vy9SiWMaetTw+NOoPAV0xPBsGVAyljd5S6P+4RUW7R3ZUGGr9lDRyPKgAMj2UAOwvqZYw==",
+      "type": "package",
+      "path": "dapper/2.1.66",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.66.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net8.0/Dapper.dll",
+        "lib/net8.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
       ]
     },
     "Google.Protobuf/3.30.0": {
@@ -2334,6 +2366,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "Dapper >= 2.1.66",
       "Microsoft.AspNetCore.OpenApi >= 8.0.14",
       "MySql.Data >= 9.3.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -2345,11 +2378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\YourProjectName\\YourProjectName.csproj",
+      "projectUniqueName": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\YourProjectName.csproj",
       "projectName": "YourProjectName",
-      "projectPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\YourProjectName\\YourProjectName.csproj",
+      "projectPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\YourProjectName.csproj",
       "packagesPath": "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\YourProjectName\\obj\\",
+      "outputPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nikhil.harisinghani\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2384,6 +2417,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.66, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",

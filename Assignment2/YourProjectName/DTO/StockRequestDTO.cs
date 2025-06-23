@@ -13,10 +13,4 @@ public class StockRequestDTO
         get;
         set;
     }
-
-    public StockRequestDTO()
-    {
-        FuelType = "";
-        Budget = "";
-    }
 }

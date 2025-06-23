@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EEbFf1bZBxw=",
+  "dgSpecHash": "xC9dn4VMDx4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\YourProjectName\\YourProjectName.csproj",
+  "projectFilePath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\YourProjectName.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
+    "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",
     "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
     "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
