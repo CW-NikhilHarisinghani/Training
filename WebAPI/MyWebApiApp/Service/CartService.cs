@@ -16,7 +16,7 @@ public class CartController : ControllerBase
         paymentService = _payment;
     }
     [HttpPost("AddProductToCart")]
-    public IActionResult AddProductToCart(string key, Product product)
+    public IActionResult AddProductToCart([FromQuery] Product product, [FromBody] string key)
     {
         if (product == null)
         {

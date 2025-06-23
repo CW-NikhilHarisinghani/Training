@@ -8,8 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddSingleton<ICart, Cart>();
 builder.Services.AddSingleton<IPaymentService, PaymentService>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -20,5 +22,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
-
+app.MapGet("/", () => "Welcome to the Cart API!");
 app.Run();

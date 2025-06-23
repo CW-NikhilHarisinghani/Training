@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     submitButton.addEventListener("click", function (e) {
         e.preventDefault();
-        document.querySelectorAll(".error-message").forEach(el => el.style.display = "none");
+        Array.from(document.getElementsByClassName("error-message")).forEach(el => el.style.display = "none");
         document.querySelectorAll("input, textarea").forEach(el => el.classList.remove("input-error"));
 
         let hasError = false;
@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Message
-        const message = document.getElementById("message");
-        console.log(message.value); 
+        const message = document.getElementById("message"); 
         if (message.value.trim() === "") {
             console.log("Message is empty");
             showError(message, "This field is required");
