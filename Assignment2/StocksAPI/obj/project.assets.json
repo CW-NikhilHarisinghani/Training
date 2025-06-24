@@ -2378,11 +2378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\YourProjectName.csproj",
+      "projectUniqueName": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\YourProjectName.csproj",
       "projectName": "YourProjectName",
-      "projectPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\YourProjectName.csproj",
+      "projectPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\YourProjectName.csproj",
       "packagesPath": "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\Yourprojectname\\obj\\",
+      "outputPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nikhil.harisinghani\\AppData\\Roaming\\NuGet\\NuGet.Config"
