@@ -31,9 +31,8 @@ builder.Services.AddCors(options =>
                   .AllowCredentials();             
         });
 });
-
 var app = builder.Build();
-
+app.UseCors("AllowLocalhostReactApp"); 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
