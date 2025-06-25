@@ -28,7 +28,6 @@ public class StockBAL : IStockBAL
 
     async Task<List<bool>> fetchResponseFromServer(List<int> request)
     {
-
         var channel = GrpcChannel.ForAddress("http://localhost:5230");
         var client = new ComputeValueForMoneyService.ComputeValueForMoneyServiceClient(channel);
         var grpcRequest = new IdList
