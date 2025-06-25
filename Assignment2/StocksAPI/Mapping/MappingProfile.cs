@@ -26,11 +26,7 @@ public class MappingProfile : Profile
             opt => opt.MapFrom(src => FormatPrice(src.Price)))
 
             .ForMember(dest => dest.CarName,
-            opt => opt.MapFrom(src => FormatName(src.MakeName, src.ModelName, src.MakeYear)))
-
-            .ForMember(dest => dest.isValueForMoney,
-            opt => opt.MapFrom(src => IsValueForMoney(src.DrivenKms, src.Price)));
-
+            opt => opt.MapFrom(src => FormatName(src.MakeName, src.ModelName, src.MakeYear)));
     }
 
     public static int? GetMin(string budget)
@@ -88,11 +84,4 @@ public class MappingProfile : Profile
     {
         return $"{year} {MakeName} {ModelName}";
     }
-
-    public static bool IsValueForMoney(int DrivenKms, decimal price)
-    {
-        return DrivenKms < 10000 && price < 200000;
-    }
-
-
 }

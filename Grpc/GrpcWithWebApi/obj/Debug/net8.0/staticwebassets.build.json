@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "RxYENWT2r2qbIdpkXlIgERTLXfHTK4QBdKgAM9jYQM8=",
+  "Source": "GrpcWithWebApi",
+  "BasePath": "_content/GrpcWithWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

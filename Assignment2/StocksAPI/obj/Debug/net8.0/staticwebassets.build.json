@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "FIlLe58nttu9XVTUQo+6l3984Il7Iar9rQ7q/V4xN1k=",
-  "Source": "YourProjectName",
-  "BasePath": "_content/YourProjectName",
+  "Hash": "PjDVAtSGpq5sKUlKKtk6uUQ9ehAlOxC3kqUeOEKQVL4=",
+  "Source": "StocksAPI",
+  "BasePath": "_content/StocksAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

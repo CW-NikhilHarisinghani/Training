@@ -114,3 +114,9 @@ C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\obj\Debug\net8.
 C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\obj\Debug\net8.0\YourProjectName.pdb
 C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\obj\Debug\net8.0\YourProjectName.genruntimeconfig.cache
 C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\obj\Debug\net8.0\ref\YourProjectName.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+C:\Users\nikhil.harisinghani\Desktop\Space\Assignment2\StocksAPI\bin\Debug\net8.0\Grpc.Net.Common.dll

@@ -1,0 +1,2 @@
+obj\Debug\net8.0\proto/Compute.cs \
+obj\Debug\net8.0\proto/ComputeGrpc.cs: proto/compute.proto

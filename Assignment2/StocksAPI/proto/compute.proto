@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "SERVERGRPC.grpc";
+
+service ComputeValueForMoneyService {
+  rpc compute(IdList) returns (ValueForMoneyResponse);
+}
+
+message IdList {
+  repeated int32 id = 1;
+}
+
+message ValueForMoneyResponse {
+  repeated bool value_for_money = 1;
+}

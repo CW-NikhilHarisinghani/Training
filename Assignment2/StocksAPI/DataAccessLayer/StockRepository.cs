@@ -14,7 +14,7 @@ public class StockRepository : IStockRepository
     {
         _context = context;
     }
-
+    
     public async Task<IEnumerable<Stock>> FetchStocks(StockRequest stockParams)
     {
         try

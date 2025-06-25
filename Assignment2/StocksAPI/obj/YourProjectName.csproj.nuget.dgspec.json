@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\YourProjectName.csproj": {}
+    "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksApi\\YourProjectName.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\YourProjectName.csproj": {
+    "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksApi\\YourProjectName.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\YourProjectName.csproj",
+        "projectUniqueName": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksApi\\YourProjectName.csproj",
         "projectName": "YourProjectName",
-        "projectPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\YourProjectName.csproj",
+        "projectPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksApi\\YourProjectName.csproj",
         "packagesPath": "C:\\Users\\nikhil.harisinghani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksAPI\\obj\\",
+        "outputPath": "C:\\Users\\nikhil.harisinghani\\Desktop\\Space\\Assignment2\\StocksApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nikhil.harisinghani\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -50,6 +50,18 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.31.1, )"
+            },
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.71.0, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.71.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
