@@ -3,7 +3,6 @@ using BuisnessAccessLayer.StockBAL;
 using DataAccessLayer.DapperContext;
 using DataAccessLayer.IStockRepository;
 using DataAccessLayer.StockRepository;
-using SERVERGRPC.grpc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-// app.MapC
+
 app.MapControllers();
 app.UseHttpsRedirection();
 app.Run();

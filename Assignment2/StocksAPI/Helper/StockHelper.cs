@@ -33,6 +33,6 @@ public class StockHelper
 
     public static bool IsRequestValid(StockRequestDTO stockRequest)
     {
-        return IsValidFuelType(stockRequest.FuelType) && IsValidBudget(stockRequest.Budget);
+        return IsValidFuelType(stockRequest.FuelTypes) && IsValidBudget(stockRequest.Budget);
     }
 }

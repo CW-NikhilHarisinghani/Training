@@ -13,10 +13,12 @@ public class ValueForMoney : IValueForMoney
     {
         int currentYear = DateTime.Now.Year;
         int stockMakeYear = stock.MakeYear;
-        if (currentYear - stockMakeYear > 5) return true;
-        if (stock.DrivenKms > 100000) return true;
-        if (stock.Price > 2000000) return true;
-        return stock.FuelType == "Hybrid" || stock.FuelType == "Electric" || stock.FuelType == "CNG";
+        int counter = 0;
+        if (currentYear - stockMakeYear <= 5) counter++;
+        if (stock.DrivenKms <= 100000) counter++;
+        if (stock.Price <= 2000000) counter++;
+        if (stock.FuelType == "Hybrid" || stock.FuelType == "Electric" || stock.FuelType == "CNG") counter++;
+        return counter >= 3;
     }
     public async Task<List<bool>> compute(List<int> IdList)
     {

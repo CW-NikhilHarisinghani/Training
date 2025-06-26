@@ -17,7 +17,7 @@ public class MappingProfile : Profile
             opt => opt.MapFrom(src => GetMax(src.Budget)))
 
             .ForMember(dest => dest.fuels,
-            opt => opt.MapFrom(src => CombineFuel(src.FuelType)));
+            opt => opt.MapFrom(src => CombineFuel(src.FuelTypes)));
 
 
         CreateMap<Stock, StockResponseDTO>()

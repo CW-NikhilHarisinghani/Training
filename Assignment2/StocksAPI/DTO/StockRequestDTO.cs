@@ -2,7 +2,7 @@ namespace DTO.StockRequestDTO;
 
 public class StockRequestDTO
 {
-    public string FuelType
+    public string FuelTypes
     {
         get;
         set;
