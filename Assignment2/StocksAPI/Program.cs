@@ -3,6 +3,7 @@ using BuisnessAccessLayer.StockBAL;
 using DataAccessLayer.DapperContext;
 using DataAccessLayer.IStockRepository;
 using DataAccessLayer.StockRepository;
+using Helper.DataHelper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,15 +17,16 @@ builder.Services.AddScoped<IStockBAL, StockBAL>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhostReactApp", 
+    options.AddPolicy("AllowLocalhostReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173") 
-                  .AllowAnyHeader()                     
-                  .AllowAnyMethod()                 
-                  .AllowCredentials();             
+            policy.WithOrigins("http://localhost:5173")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .AllowCredentials();
         });
 });
+
 var app = builder.Build();
 app.UseCors("AllowLocalhostReactApp"); 
 if (app.Environment.IsDevelopment())

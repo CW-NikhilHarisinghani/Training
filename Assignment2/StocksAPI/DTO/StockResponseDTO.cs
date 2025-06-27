@@ -12,5 +12,6 @@ public class StockResponseDTO
     public string CarName { get; set; }
     public string FormattedPrice { get; set; }
     public bool isValueForMoney { get; set; }
+    public string imageUrl { get; set; }
 }
 

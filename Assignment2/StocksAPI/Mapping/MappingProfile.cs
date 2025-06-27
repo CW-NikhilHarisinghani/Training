@@ -26,7 +26,10 @@ public class MappingProfile : Profile
             opt => opt.MapFrom(src => FormatPrice(src.Price)))
 
             .ForMember(dest => dest.CarName,
-            opt => opt.MapFrom(src => FormatName(src.MakeName, src.ModelName, src.MakeYear)));
+            opt => opt.MapFrom(src => FormatName(src.MakeName, src.ModelName, src.MakeYear)))
+
+            .ForMember(dest => dest.imageUrl,
+            opt =>opt.MapFrom(src => src.image_url));
     }
 
     public static int? GetMin(string budget)

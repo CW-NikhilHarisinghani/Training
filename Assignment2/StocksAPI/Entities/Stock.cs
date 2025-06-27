@@ -10,5 +10,6 @@ public class Stock
     public int DrivenKms { get; set; }
     public string FuelType { get; set; }
     public string CityName { get; set; }
-    public bool IsValueForMoney { get; set; } 
+    public bool IsValueForMoney { get; set; }
+    public string image_url{ get; set; }
 }

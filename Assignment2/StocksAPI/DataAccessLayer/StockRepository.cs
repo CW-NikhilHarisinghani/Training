@@ -42,7 +42,6 @@ public class StockRepository : IStockRepository
                 MaxBudget = hasBudget ? stockParams.maxBudget * 100000 : null,
                 FuelTypes = stockParams.fuels?.Select(f => f.ToString())
             };
-
             var res = await connection.QueryAsync<Stock>(query, parameters);
             return res;
         }
